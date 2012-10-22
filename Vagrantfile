@@ -14,6 +14,7 @@ Vagrant::Config.run do |config|
      base_config.vm.network :hostonly, "192.168.1.10"
      base_config.vm.customize ["modifyvm", :id, "--memory", 1024]
      base_config.vm.customize ["modifyvm", :id, "--cpus", 2]
+     base_config.vm.provision :shell, :path => "provision.sh"
      base_config.vm.provision :puppet do |puppet|
        puppet.manifests_path = "manifests"
        puppet.manifest_file  = "nature-server-config.pp"
@@ -29,6 +30,7 @@ Vagrant::Config.run do |config|
      base_config.vm.network :hostonly, "192.168.1.11"
      base_config.vm.customize ["modifyvm", :id, "--memory", 1024]
      base_config.vm.customize ["modifyvm", :id, "--cpus", 2]
+     base_config.vm.provision :shell, :path => "provision.sh"
      base_config.vm.provision :puppet do |puppet|
        puppet.manifests_path = "manifests"
        puppet.manifest_file  = "nature-server-config.pp"
@@ -44,6 +46,7 @@ Vagrant::Config.run do |config|
      base_config.vm.network :hostonly, "192.168.1.12"
      base_config.vm.customize ["modifyvm", :id, "--memory", 1024]
      base_config.vm.customize ["modifyvm", :id, "--cpus", 2]
+     base_config.vm.provision :shell, :path => "provision.sh"
      base_config.vm.provision :puppet do |puppet|
        puppet.manifests_path = "manifests"
        puppet.manifest_file  = "nature-server-config.pp"

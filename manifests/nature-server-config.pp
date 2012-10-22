@@ -20,6 +20,12 @@ Package {
 
 exec {"apt-get_update":
        command => "apt-get update",
+       before => Exec["apt-get_upgrade"],
+       user => root,
+   }
+
+exec {"apt-get_upgrade":
+       command => "apt-get upgrade -y",
        before => Package["base_cmd_tools"],
        user => root,
    }
